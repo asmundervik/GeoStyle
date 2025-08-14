@@ -2,8 +2,6 @@
 
 GeoStyle is a lightweight, client-side JavaScript library that collects user context data, including time of day, geolocation, urban/rural classification, and U.S. state, using `ip-api.com` for coordinates and the U.S. Census Geocoder API for spatial data. The data is output via callbacks, events, or a global variable, enabling developers to create personalized, adaptive styling for web pages. Dependency-free and easy to integrate, GeoStyle empowers dynamic, context-aware user experiences.
 
-*GitHub Repository Description*: GeoStyle is a lightweight JS library that collects user context data (time, IP, geolocation, urban/rural, U.S. state) using ip-api.com and Census Geocoder. Outputs data for custom styling. Dependency-free. (249 characters)
-
 ## Installation
 
 <script src="geostyle.js"></script>
