@@ -1,5 +1,27 @@
 # GeoStyle
 
-GeoStyle is a lightweight, client-side JavaScript library that dynamically styles web pages based on user context, including IP address, time of day, and geolocation. Using `ip-api.com` for precise longitude and latitude data and the U.S. Census Geocoder API for detailed spatial information, GeoStyle can tailor styles based on whether the user is in a city, suburb, or rural area, as well as their specific U.S. state. Create adaptive, personalized user experiences with customizable styling rules for time-based themes (morning, afternoon, evening, night) and location-specific attributes. Dependency-free and easy to integrate, GeoStyle empowers developers to craft visually engaging websites that respond to the user's environment.
+GeoStyle is a lightweight, client-side JavaScript library that collects user context data, including time of day, geolocation, urban/rural classification, and U.S. state, using `ip-api.com` for coordinates and the U.S. Census Geocoder API for spatial data. The data is output via callbacks, events, or a global variable, enabling developers to create personalized, adaptive styling for web pages. Dependency-free and easy to integrate, GeoStyle empowers dynamic, context-aware user experiences.
+
+*GitHub Repository Description*: GeoStyle is a lightweight JS library that collects user context data (time, IP, geolocation, urban/rural, U.S. state) using ip-api.com and Census Geocoder. Outputs data for custom styling. Dependency-free. (249 characters)
 
 ## Installation
+
+<script src="geostyle.js"></script>
+
+## Usage
+
+Include `geostyle.js` in your HTML and access user context data via the `onGeoStyleReady` callback, `geoStyleReady` event, or `window.geoStyleContext` global to apply custom styles based on time, location, or environment.
+
+### Using the Callback
+Use `onGeoStyleReady` to receive context data and apply styles:
+
+```javascript
+onGeoStyleReady(function(context) {
+  // Apply styles based on environment or state
+  if (context.geographicClassification === 'urban') {
+    document.body.style.backgroundColor = '#ff4500';
+  }
+  if (context.location?.state === 'California') {
+    document.body.style.border = '2px solid #ff0000';
+  }
+});
